@@ -1,85 +1,159 @@
 <a name="readme-top"></a>
 
-# Desafio Técnico - QA - Cucumber BDD
+<img alt="Header" width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=7B61FF&height=180&section=header&text=BDD%20Test%20Automation&fontSize=38&fontColor=ffffff&fontAlignY=32&desc=Cucumber%20%C2%B7%20Selenium%20%C2%B7%20Java%2017%20%C2%B7%20Allure&descAlignY=52&descSize=16"/>
 
-![Intellij](https://img.shields.io/badge/Intellij-logo?style=flat-square&color=%23000000)
-![Java](https://img.shields.io/badge/JAVA_17-logo?style=flat-square&color=%23FF7800)
-![Selenium](https://img.shields.io/badge/Selenium-logo?style=flat-square&color=%234EA94B)
-![Cucumber](https://img.shields.io/badge/Cucumber-logo?style=flat-square&color=%234EA94B)
-![RestAssured](https://img.shields.io/badge/RestAssured-logo?style=flat-square&color=%234EA94B)
-![Allure](https://img.shields.io/badge/Allure-logo?style=flat-square&color=%23FF4500)
+<h3 align="center">Behaviour-driven UI automation with Cucumber and Selenium</h3>
 
-Este projeto consiste em um desafio técnico para demonstrar conhecimentos acerca de Automação de Testes em UI com
-Cucumber e padrão BDD (Behavior Driven Development. A
-aplicação de exemplo a ser utilizada é [BugBank](https://bugbank.netlify.app/).
+<p align="center">
+  <a href="https://www.linkedin.com/in/bscarpari/">
+    <img alt="Made by" src="https://img.shields.io/badge/-Bruno%20Scarpari-blue?style=flat-square&logo=Linkedin&logoColor=white">
+  </a>
 
-## Responsável
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/bscarpari/test-qa-cucumber-bdd?style=flat-square">
 
-<table>
-    <tr>
-      <td align="center">
-        <a href="https://github.com/bscarpari">
-          <img src="https://avatars.githubusercontent.com/u/53575457?v=4" width="100px;" /><br>
-          <sub>
-            <b>Bruno Scarpari</b>
-          </sub>
-        </a>
-      </td>
-    </tr>
-</table>
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/bscarpari/test-qa-cucumber-bdd?style=flat-square">
 
-## Rodar o projeto localmente
+  <a href="https://github.com/bscarpari/test-qa-cucumber-bdd/commits/main">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/bscarpari/test-qa-cucumber-bdd?style=flat-square">
+  </a>
 
-1. Clone o repositorio
+  <img alt="License" src="https://img.shields.io/github/license/bscarpari/test-qa-cucumber-bdd?style=flat-square">
+</p>
 
-```ssh
-git clone https://github.com/bscarpari/test-qa-cucumber-bdd.git
+<p align="center">
+  <a href="#-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-coverage">Coverage</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-getting-started">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-reports">Reports</a>
+</p>
+
+<!-- PLACEHOLDER: screenshot do relatório Allure com os cenários Gherkin.
+     evidência em docs/allure.png -->
+<!-- <img alt="Allure report" width="100%" src="https://raw.githubusercontent.com/bscarpari/test-qa-cucumber-bdd/main/docs/allure.png"> -->
+
+---
+
+## 🌐 About
+
+UI test automation for [BugBank](https://bugbank.netlify.app/) written in **BDD** style: scenarios are described in **Gherkin** and executed by **Cucumber** on top of Selenium.
+
+The point of this approach is that the test file reads as a specification — a product owner or analyst can review what is being validated without reading Java. Step definitions keep the technical implementation separate from the business description.
+
+<sub>Originally solved as a technical challenge.</sub>
+
+---
+
+## 🚀 Technologies
+
+<!-- PLACEHOLDER: remover a badge do REST Assured se não houver testes de API aqui. -->
+![Java](https://img.shields.io/badge/Java%2017-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Cucumber](https://img.shields.io/badge/Cucumber-23D96C?style=for-the-badge&logo=cucumber&logoColor=white)
+![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
+![Allure](https://img.shields.io/badge/Allure-FF4500?style=for-the-badge&logo=qameta&logoColor=white)
+![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
+
+- **Cucumber** — runs Gherkin feature files and binds them to step definitions
+- **Gherkin** — Given/When/Then syntax describing behaviour in plain language
+- **Selenium** — browser automation behind the steps
+- **Java 17** — language and runtime
+- **Allure** — reporting with scenario steps and attachments
+- **Maven** — build and test execution
+
+---
+
+## 🧪 Coverage
+
+| Feature | Scenario |
+|---------|----------|
+| Registration | Creating a new account and confirming the success feedback |
+| Login | Authenticating with valid credentials and reaching the dashboard |
+
+<!-- PLACEHOLDER: cenários em aberto — completar e mover para a tabela acima,
+     ou manter fora do README até estarem prontos.
+     - Extrato (account statement)
+     - Transferência (transfer between accounts)
+     Ambos já existem no repo test-qa-ui: aqui é portar para Gherkin. -->
+
+**Structure**
+
+```plaintext
+src/test/
+├── resources/
+│   └── features/        # Gherkin .feature files
+└── java/
+    ├── steps/           # step definitions
+    └── pages/           # page objects
 ```
 
-2. Entre na pasta criada
+---
 
-```ssh
+## 💻 Getting started
+
+**Requirements**
+
+| Tool | Version |
+|------|---------|
+| Java (JDK) | 17 |
+| Maven | 3.8+ |
+| Allure CLI | [installation guide](https://docs.qameta.io/allure/) |
+
+**1. Clone the repository**
+
+```bash
+git clone https://github.com/bscarpari/test-qa-cucumber-bdd.git
 cd test-qa-cucumber-bdd
-``` 
+```
 
-3. Abra o projeto na IDE IntelliJ
+**2. Open the project in IntelliJ IDEA**
 
-4. Certifique de configurar o SDK do projeto para Java 17
+**3. Set the project SDK to Java 17**
 
 ```text
 File > Project Structure > Project > Project SDK > 17
 ```
 
-5. Para rodar todos os testes de uma só vez:
+**4. Run the tests**
 
-```text
-a. Acesse a dependência lateral direita "Maven"
-b. Abra o Lifecycle
-c. Execute o comando "test"
+Via terminal:
+
+```bash
+mvn test
 ```
 
-**OBS.:** execute todos os testes para depois gerar o relatório
-
-6. Para gerar e visualizar o relatório de cobertura de testes:
+Or through the IDE:
 
 ```text
-1. Acesse o terminal da IDE
-2. Execute o comando "allure generate --clean"
-3. Execute o comando "allure open"
+Maven panel (right sidebar) > Lifecycle > test
 ```
 
-**OBS.:** precisa ter o Allure instalado na máquina. Caso não tenha, siga as
-instruções [aqui](https://docs.qameta.io/allure/)
+---
 
-## Cobertura de testes
+## 📊 Reports
 
-- [x] Login
-- [x] Cadastro
-- [ ] Extrato
-- [ ] Transferência
+Run the full suite **before** generating the report — Allure builds it from the results of the last execution.
 
-## Licença
+```bash
+allure generate --clean
+allure open
+```
+
+Requires the Allure CLI installed locally. Follow the [official instructions](https://docs.qameta.io/allure/) if you don't have it.
+
+---
+
+## 📄 License
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
-<p align="right">(<a href="#readme-top">voltar para o topo</a>)</p>
+---
+
+<p align="center">
+  Made with 💜 by <a href="https://www.linkedin.com/in/bscarpari/">Bruno Scarpari</a> ·
+  <a href="https://github.com/bscarpari">GitHub</a> ·
+  <a href="mailto:bscarpari.dev@gmail.com">Email</a>
+</p>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<img alt="Footer" width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=7B61FF&height=100&section=footer"/>
